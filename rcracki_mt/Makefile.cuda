@@ -230,7 +230,7 @@ rcuda_ext.o: $(CUDA_SHARED_PATH)/rcuda_ext.h $(CUDA_SHARED_PATH)/rcuda_ext.cpp $
 	$(CC) $(CFLAGS) $(CUDA_SHARED_PATH)/rcuda_ext.cpp
 
 rcuda.o: $(CUDA_SHARED_PATH)/rcuda.h $(CUDA_SHARED_PATH)/rcuda.cu $(COMMON_API_PATH)/Public.h $(COMMON_API_PATH)/global.h
-	$(CUDA_PATH)/bin/nvcc --compiler-bindir=/usr/bin/gcc-4.3 $(OPTIMIZATION) \
+	$(CUDA_PATH)/bin/nvcc --compiler-bindir=/usr/bin/gcc $(OPTIMIZATION) \
 		$(NVCCDEBUG) $(NVCCFLAGS) --compiler-options="$(DEBUG)" \
 		--compiler-options="$(CXXFLAGS)" -I. \
 		--compile $(CUDA_SHARED_PATH)/rcuda.cu
