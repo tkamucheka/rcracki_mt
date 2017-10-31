@@ -29,6 +29,7 @@ CC = g++
 OPTIMIZATION = -O3
 INCLUDES = -I. -I$(CUDA_PATH)/include
 CFLAGS = -Wall -ansi $(INCLUDES) $(OPTIMIZATION) -c $(DEBUG) -DGPU
+CXXFLAGS = 	-D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
 NVCCFLAGS = --ptxas-options=-v
 LFLAGS = -Wall -ansi -filt $(INCLUDES) $(OPTIMIZATION) $(DEBUG) \
 	-L$(CUDA_PATH)/lib64 -L$(CUDA_PATH)/lib -L. -Xlinker -rpath .
